@@ -23,6 +23,6 @@ El servidor integrado de Flask está pensado solo para desarrollo local.
 
 ## Despliegue en Vercel
 
-Importa este repositorio en Vercel y despliega la rama `main`. La configuración
-en `pyproject.toml` indica a Vercel que la aplicación Flask está en
-`Ejercicio_Autonomo.py`.
+Importa este repositorio en Vercel y despliega la rama `main`. `pyproject.toml`
+declara Flask y apunta al entrypoint de la aplicación; `vercel.json` incluye la
+plantilla `templates/index.html` en la función.
