@@ -5,3 +5,4 @@ venv/
 .env
 .env.*
 !.env.example
+MANUAL Lenguaje natural.pdf
