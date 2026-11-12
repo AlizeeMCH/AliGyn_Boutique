@@ -1,0 +1,2 @@
+[tool.vercel]
+entrypoint = "Ejercicio_Autonomo:app"

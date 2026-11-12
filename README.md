@@ -20,3 +20,9 @@ py Ejercicio_Autonomo.py
 Después abre `http://127.0.0.1:5000` en el navegador.
 
 El servidor integrado de Flask está pensado solo para desarrollo local.
+
+## Despliegue en Vercel
+
+Importa este repositorio en Vercel y despliega la rama `main`. La configuración
+en `pyproject.toml` indica a Vercel que la aplicación Flask está en
+`Ejercicio_Autonomo.py`.
