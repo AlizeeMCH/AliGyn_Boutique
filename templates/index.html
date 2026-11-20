@@ -6,12 +6,15 @@
     <title>AliGyn BOUTIQUE | Asesora de estilo</title>
     <style>
         :root {
-            --oliva: #85896f;
-            --oliva-oscuro: #555b43;
-            --oliva-palido: #eef0e7;
-            --crema: #f7f5ef;
-            --beige: #e7e2d5;
-            --tinta: #33352e;
+            --rosa: #f45b9a;
+            --rosa-fuerte: #df347d;
+            --rosa-palido: #ffe4ef;
+            --turquesa: #29c9c3;
+            --turquesa-oscuro: #087e82;
+            --crema: #fff8fb;
+            --lila-suave: #f7effb;
+            --tinta: #352b33;
+            --borde: #ead7e2;
         }
         * { box-sizing: border-box; }
         body {
@@ -21,7 +24,10 @@
             place-items: center;
             padding: 1.25rem;
             color: var(--tinta);
-            background: var(--crema);
+            background:
+                radial-gradient(circle at 12% 15%, #ffd0e5 0 90px, transparent 91px),
+                radial-gradient(circle at 88% 82%, #baf7f2 0 120px, transparent 121px),
+                linear-gradient(135deg, #fff8fb, #f7edff 55%, #effdfb);
             font: 15px/1.5 "Segoe UI", sans-serif;
         }
         button, input { font: inherit; }
@@ -32,10 +38,10 @@
             height: min(760px, calc(100vh - 2.5rem));
             min-height: 650px;
             overflow: hidden;
-            border: 1px solid var(--beige);
-            border-radius: 24px;
+            border: 1px solid #ffffff;
+            border-radius: 28px;
             background: #fffefa;
-            box-shadow: 0 24px 70px #34392a1c;
+            box-shadow: 0 28px 80px #b83d7728, 0 8px 28px #29c9c319;
         }
         .portada {
             position: relative;
@@ -46,34 +52,61 @@
             justify-content: space-between;
             padding: 2rem;
             color: #f8f6ef;
-            background: linear-gradient(155deg, #747960, #898b72 58%, #a1a08a);
+            background:
+                radial-gradient(circle at 20% 38%, #ffb1d0 0 90px, transparent 91px),
+                linear-gradient(155deg, #da3d84 0%, #ed629e 48%, #43cbd2 128%);
         }
         .portada::before, .portada::after {
             position: absolute;
             z-index: -1;
             content: "";
-            border: 1px solid #f1eedb38;
+            border: 1px solid #fff8;
             border-radius: 50%;
             pointer-events: none;
         }
         .portada::before { width: 350px; height: 350px; top: 21%; left: 7%; }
         .portada::after { width: 250px; height: 250px; right: -120px; bottom: -30px; }
-        .marca { position: relative; z-index: 1; display: flex; align-items: center; gap: .8rem; font-size: 1rem; letter-spacing: .14em; }
+        .marca {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: .55rem .7rem .55rem .55rem;
+            border: 1px solid #ffffff73;
+            border-radius: 18px;
+            background: #ffffff17;
+            box-shadow: 0 12px 30px #a01d6033;
+            backdrop-filter: blur(8px);
+            font-size: 1.28rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+        }
         .sello {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 62px;
+            height: 62px;
             place-items: center;
-            border: 1px solid #f2efdcaa;
+            border: 2px solid #fff;
             border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff33, #ffffff11);
+            box-shadow: 0 7px 18px #a01d6040, inset 0 0 0 4px #ffffff20;
             font-family: Georgia, serif;
-            font-size: 1.18rem;
+            font-size: 1.55rem;
             letter-spacing: -.13em;
         }
         .sello span + span { margin-left: -.18rem; font-size: .92em; }
-        .marca strong { display: block; margin-top: .12rem; font-size: .68rem; font-weight: 400; letter-spacing: .31em; }
+        .marca strong {
+            display: block;
+            margin-top: .12rem;
+            color: #fff;
+            font-size: .82rem;
+            font-weight: 800;
+            letter-spacing: .36em;
+            text-shadow: 0 2px 12px #86194b55;
+        }
         .portada-centro {
             position: relative;
             z-index: 1;
@@ -85,20 +118,27 @@
             text-align: center;
         }
         .frase { margin: 0; font: 400 clamp(2.1rem, 4vw, 3rem)/1.08 Georgia, serif; letter-spacing: .01em; }
-        .frase em { color: #ede8d5; font-weight: 400; }
+        .frase em {
+            color: #fff;
+            font-weight: 400;
+            text-shadow: 0 4px 22px #a8286c55;
+        }
+        .frase {
+            text-shadow: 0 5px 24px #a8286c55;
+        }
         .ilustracion { width: min(100%, 250px); height: 260px; }
         .ilustracion svg { display: block; width: 100%; height: 100%; overflow: visible; }
-        .aureola { fill: none; stroke: #f1eedb66; stroke-width: 1; }
-        .prenda { fill: #f2eddb16; stroke: #f5f1e5; stroke-width: 1.5; stroke-linejoin: round; }
-        .detalle { fill: none; stroke: #e3dfca; stroke-width: 1.2; stroke-linecap: round; }
-        .flor { fill: #e3dfca; opacity: .8; }
+        .aureola { fill: none; stroke: #ffffff88; stroke-width: 1.2; }
+        .prenda { fill: #ffffff1f; stroke: #fff; stroke-width: 1.5; stroke-linejoin: round; }
+        .detalle { fill: none; stroke: #fff; stroke-width: 1.35; stroke-linecap: round; }
+        .flor { fill: #fff4a8; opacity: .95; }
         .conversacion { display: flex; min-width: 0; min-height: 0; flex-direction: column; padding: 1.25rem; }
         .chat-cabecera {
             display: flex;
             align-items: center;
             gap: .8rem;
             padding: .25rem .25rem 1rem;
-            border-bottom: 1px solid #ece9df;
+            border-bottom: 1px solid var(--borde);
         }
         .avatar {
             display: grid;
@@ -106,14 +146,15 @@
             height: 44px;
             place-items: center;
             border-radius: 50%;
-            background: var(--oliva-palido);
-            color: var(--oliva-oscuro);
-            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--rosa-palido), #d4fbf7);
+            color: var(--rosa-fuerte);
+            font-size: 1.4rem;
+            box-shadow: 0 7px 18px #e75a9630;
         }
         .chat-cabecera strong, .chat-cabecera small { display: block; }
         .chat-cabecera small { margin-top: .15rem; color: #74776c; }
-        .estado { margin-left: auto; color: var(--oliva-oscuro); font-size: .75rem; }
-        .punto { display: inline-block; width: 8px; height: 8px; margin-right: .25rem; border-radius: 50%; background: #899274; }
+        .estado { margin-left: auto; color: var(--turquesa-oscuro); font-size: .75rem; }
+        .punto { display: inline-block; width: 8px; height: 8px; margin-right: .25rem; border-radius: 50%; background: var(--turquesa); box-shadow: 0 0 0 4px #29c9c322; }
         #mensajes {
             display: flex;
             height: 230px;
@@ -124,44 +165,51 @@
             gap: .75rem;
             overflow-y: auto;
             padding: 1.25rem .2rem;
-            scrollbar-color: var(--oliva) var(--crema);
+            scrollbar-color: var(--rosa) var(--crema);
             scrollbar-width: thin;
         }
         #mensajes::-webkit-scrollbar { width: 8px; }
-        #mensajes::-webkit-scrollbar-thumb { border-radius: 8px; background: var(--oliva); }
+        #mensajes::-webkit-scrollbar-thumb { border-radius: 8px; background: var(--rosa); }
         #mensajes::-webkit-scrollbar-track { background: var(--crema); }
         .mensaje { max-width: 88%; flex: 0 0 auto; margin: 0; padding: .75rem .9rem; border-radius: 16px; }
-        .bot { align-self: flex-start; border: 1px solid #ece9df; border-bottom-left-radius: 4px; background: #fffefa; }
-        .usuario { align-self: flex-end; border-bottom-right-radius: 4px; background: var(--oliva-palido); }
+        .bot { align-self: flex-start; border: 1px solid var(--borde); border-bottom-left-radius: 4px; background: #fffefa; }
+        .usuario { align-self: flex-end; border: 1px solid #b2ebe7; border-bottom-right-radius: 4px; background: linear-gradient(135deg, #e2fffb, #ffeaf3); }
         .ayuda { margin: 0 0 .45rem; color: #74776c; font-size: .78rem; }
         .preguntas { display: flex; flex-wrap: wrap; gap: .45rem; padding-bottom: 1rem; }
         .pregunta {
             padding: .42rem .65rem;
-            border: 1px solid #d6d5c7;
+            border: 1px solid #edbdd2;
             border-radius: 18px;
-            background: transparent;
-            color: var(--oliva-oscuro);
+            background: #fff;
+            color: var(--rosa-fuerte);
             cursor: pointer;
             font-size: .76rem;
+            transition: .18s ease;
         }
-        .pregunta:hover { background: var(--oliva-palido); }
-        form { display: flex; gap: .55rem; padding-top: .85rem; border-top: 1px solid #ece9df; }
+        .pregunta:hover {
+            border-color: var(--rosa);
+            background: var(--rosa-palido);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px #ed629e1f;
+        }
+        form { display: flex; gap: .55rem; padding-top: .85rem; border-top: 1px solid var(--borde); }
         input {
             min-width: 0;
             flex: 1;
             padding: .75rem .9rem;
-            border: 1px solid #dcd9ce;
+            border: 1px solid #e2bdcf;
             border-radius: 22px;
-            outline-color: var(--oliva);
+            outline-color: var(--rosa);
             background: #fff;
         }
         #enviar {
             padding: .7rem 1rem;
             border: 0;
             border-radius: 22px;
-            background: var(--oliva-oscuro);
+            background: linear-gradient(135deg, var(--rosa-fuerte), #ef5da0);
             color: white;
             cursor: pointer;
+            box-shadow: 0 8px 18px #d7357a38;
         }
         #enviar:disabled { opacity: .6; cursor: wait; }
         #error { min-height: 1.3rem; padding: .3rem .2rem 0; color: #8a5148; font-size: .8rem; }
